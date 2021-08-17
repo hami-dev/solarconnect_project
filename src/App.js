@@ -17,10 +17,21 @@ function App() {
     setArrData(value);
   };
 
+  const pressHandler = (e) => {
+    if (e.key === 'Enter') {
+      handleOnClick();
+    }
+  };
+
   return (
     <div className="wrapper">
       <DateTime type="ko-KR" />
-      <input type="text" ref={inputNums} placeholder="숫자를 입력해주세요" />
+      <input
+        type="text"
+        ref={inputNums}
+        placeholder="숫자를 입력해주세요"
+        onKeyPress={pressHandler}
+      />
       <button onClick={handleOnClick}>SORT</button>
       <div className="wrapper__result">
         <Result inputValue={arrData} desc={false} />
