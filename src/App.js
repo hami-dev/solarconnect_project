@@ -12,14 +12,18 @@ function App() {
     return inputValue;
   };
 
-  const handleOnClick = () => {
+  const handleArrData = () => {
     const value = getValueFromInput();
     setArrData(value);
   };
 
+  const handleOnClick = () => {
+    handleArrData();
+  };
+
   const pressHandler = (e) => {
     if (e.key === 'Enter') {
-      handleOnClick();
+      handleArrData();
     }
   };
 
